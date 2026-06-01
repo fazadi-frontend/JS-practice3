@@ -1,15 +1,18 @@
-function today(){
+function getToday() {
     var i = new Date();
-    var Y = i.getFullYear();
-    var M = String(i.getMonth() + 1).padStart(2, 0);
-    // +1 cuse js count the month from 0
-    // we need string to use padStrat
-    // padStart its only for strings
-    //padStart: The string length must be at least 2 characters; if it’s shorter, pad it on the left with `"0"`.
-    var D = String(i.getDay() + 1).padStart(2, 0);
-    return `${Y}-${M}-${D}`;
+    return {
+        year: i.getFullYear(),
+        month: i.getMonth() + 1, 
+                         //  👆🏻cause js count the month from 0
+        day: i.getDate()
+    };
 }
-var y = Number["Y"];
+//When you write Number["Y"], you’re telling JavaScript: 
+//Hey, go into the Number object and fetch the property named “Y”.
+//But you don’t actually have that!
+//Number is a constructor function.
+//To convert a value to a number, you need to use parentheses: Number(Y).
+var y = Number(Y);
 var m = Number["M"];
 var d = Number["D"];
 console.log(y, m, d);
